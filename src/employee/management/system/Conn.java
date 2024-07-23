@@ -9,20 +9,20 @@ package employee.management.system;
  * @author shahz
  */
 
-import java.sql.*;
+import java.sql.*; // Import SQL package for database connection and operations
 
 public class Conn {
     
-    Connection c;
-    Statement s;
+    Connection c; // Declare Connection object
+    Statement s;  // Declare Statement object
 
-    public Conn () {
+    public Conn() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:mysql:///employeemanagementsystem", "root", "root");
-            s = c.createStatement();
+            Class.forName("com.mysql.cj.jdbc.Driver"); // Load MySQL JDBC driver
+            c = DriverManager.getConnection("jdbc:mysql:///employeemanagementsystem", "root", "root"); // Establish connection to database
+            s = c.createStatement(); // Create statement object to execute queries
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Print exception details if any error occurs
         }
     }
 }
